@@ -1,8 +1,7 @@
 # This program will generate a text file with a list of dates
-#       Author: Lucas Rennó Kallás
+#       Author: lucasrennok
 #       -- WORDLIST WITH R --
-#       The Wordlist Will be Formated with: DMY or MDY
-#
+#       Format: DMY
 
 # Install some packages to use the Lubridate Library
 install.packages("tidyverse")
@@ -19,20 +18,21 @@ begin_date_str <- readline(prompt="Enter the First Date")
 end_date_str <- readline(prompt="Enter the Last Date")
 '10/04/2021'
 
+# Create date object
 date1 = dmy(begin_date_str)
 date2 = dmy(end_date_str)
 
-# intervals
+# Intervals
 inter <- interval(date1, date2)
 inter2 <- interval(date1,date1)
 
+# Declaring variables
 cont <- 1
-dates <- c("")
+dates <- c()
 date_aux = date1
-print(inter == '10/04/2020')
+
+#Create the vector of dates
 while(int_overlaps(inter, inter2)){
-    inter2 <- interval(date_aux, date_aux)
-    date_aux <- date_aux+ddays(1)
     day_w = mday(date_aux)
     if(day_w<10){
         day_w = paste("0", mday(date_aux), sep="")
@@ -42,7 +42,15 @@ while(int_overlaps(inter, inter2)){
         month_w = paste("0", month(date_aux), sep="")
     }
     year_w = year(date_aux)
+
+    #Add the date in vector
     dates[cont] <- paste(day_w,month_w,year_w,sep="")
+
+    #Updating variables
     cont <- cont+1
+    date_aux <- date_aux+ddays(1)
+    inter2 <- interval(date_aux, date_aux)
 }
+
+#Writing dates
 write.table(dates, file = "wordlist.txt", sep="\n", row.names=F, col.names=F)
