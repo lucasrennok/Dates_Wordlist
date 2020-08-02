@@ -15,4 +15,4 @@ I used the information of [this](http://material.curso-r.com/lubridate/) site to
 
 
 ## R language
-Is very good to use this language to organize and analise data. Maybe I will use it more after that. There are a lot of functions to take Data Science "more seriously".
+Is very good to use this language to organize and analise data. Maybe I will use it more after that. There are a lot of functions to use in Data Science.
