@@ -53,4 +53,4 @@ while(int_overlaps(inter, inter2)){
 }
 
 #Writing dates
-write.table(dates, file = "wordlist.txt", sep="\n", row.names=F, col.names=F)
+write.table(dates, file = "wordlist.txt", quote=F, sep="\n", row.names=F, col.names=F)
