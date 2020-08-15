@@ -16,7 +16,7 @@ begin_date_str <- readline(prompt="Enter the First Date")
 '10/04/2020'
 
 end_date_str <- readline(prompt="Enter the Last Date")
-'10/04/2021'
+'15/04/2020'
 
 # Create date object
 date1 = dmy(begin_date_str)
@@ -31,7 +31,7 @@ cont <- 1
 dates <- c()
 date_aux = date1
 
-#Create the vector of dates
+# Create the vector of dates
 while(int_overlaps(inter, inter2)){
     day_w = mday(date_aux)
     if(day_w<10){
@@ -43,7 +43,7 @@ while(int_overlaps(inter, inter2)){
     }
     year_w = year(date_aux)
 
-    #Add the date in vector
+    # Add the date in vector
     dates[cont] <- paste(day_w,month_w,year_w,sep="")
 
     #Updating variables
